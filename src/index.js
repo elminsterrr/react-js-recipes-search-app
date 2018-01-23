@@ -4,22 +4,23 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-
-import './index.css';
-import App from './components/App/App.js';
 import registerServiceWorker from './registerServiceWorker';
+
+import App from './components/App';
+import reducers from './reducers';
+
+import './style.css';
 
 const createStoreWithMiddleware = createStore(
   reducers,
   composeWithDevTools(applyMiddleware(thunk))
 );
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
-
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware}>
     <App />
   </Provider>,
-  document.getElementById('application')
+  document.getElementById('root')
 );
+
+registerServiceWorker();

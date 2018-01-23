@@ -1,0 +1,116 @@
+.aligner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-top {
+  margin: 9px 25px 25px 25px;
+}
+
+.data-not-found {
+  margin: 0 auto;
+  color: #000;
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.ingredients-title {
+  color: #000;
+  font-weight: 700;
+}
+
+.ingredients {
+  color: #000;
+  font-style: italic;
+}
+
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  color: #000;
+  justify-content: center;
+}
+
+.text {
+  display: flex;
+  margin: 0 auto;
+}
+
+.recipe-puppy-error {
+  width: 400px;
+  margin: 0 auto;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.no-fav {
+  color: #000;
+  text-align: center;
+  margin: 10px 0 10px 0;
+}
+
+.one-ingredient {
+  color: #000;
+  margin-left: 10px;
+  font-style: italic;
+  cursor: pointer;
+}
+
+.title-recipe-list-item {
+  font-weight: 700;
+  font-size: 20px;
+  padding-left: 25px;
+}
+
+.title-recipe-full {
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.thumbnail {
+  margin-top: 0px;
+}
+
+.fav-button {
+  color: #000;
+  margin-top: 5px;
+  justify-content: center;
+  display: flex;
+}
+
+.input-group {
+  width: 400px;
+  margin: 50px auto 25px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination {
+  margin: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.page-numbers {
+  padding: 10px;
+  color: #000;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.fav-button-search-bar {
+  color: #000;
+  margin-top: 25px;
+  justify-content: center;
+  display: flex;
+}
