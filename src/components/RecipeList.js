@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
-import _ from 'lodash'
+import React, { Component } from 'react';
+import _ from 'lodash';
 
-import RecipeListItem from '../containers/RecipeListItem'
+import RecipeListItem from '../containers/RecipeListItem';
 
 class RecipeList extends Component {
-  render () {
-    const recipesList = (_.last(this.props.recipesReady)).map((oneRecipe) => {
-      const oneRecipeKey = _.uniqueId('recipe_')
+  render() {
+    const recipesList = _.last(this.props.recipesReady).map(oneRecipe => {
+      const oneRecipeKey = _.uniqueId('recipe_');
       return (
         <RecipeListItem
           key={oneRecipeKey}
@@ -15,20 +15,18 @@ class RecipeList extends Component {
           ingredients={oneRecipe.recipe.ingredients}
           thumbnail={oneRecipe.recipe.image}
         />
-      )
-    })
+      );
+    });
     return (
       <div>
         <div className="container">
           <div className="row justify-content-xl-center">
-            <ul className="col-xl-12">
-              {recipesList}
-            </ul>
+            <ul className="col-xl-12">{recipesList}</ul>
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default RecipeList
+export default RecipeList;

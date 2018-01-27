@@ -6,7 +6,7 @@ import Placeholder from '../components/Placeholder';
 import DataNotFound from '../components/DataNotFound';
 import ErrorInfo from '../components/ErrorInfo';
 import ButtonBackToTop from '../components/ButtonBackToTop';
-import RecipeList from './RecipeList';
+import RecipeList from '../components/RecipeList';
 import Favorites from './Favorites';
 
 class Results extends Component {
