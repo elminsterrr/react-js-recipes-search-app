@@ -2,5 +2,6 @@
   "extends": "callstack-io",
   "rules": {
     "jsx-a11y/no-noninteractive-element-interactions": 0,
+    "react/no-did-update-set-state": 0,
   }
 }
