@@ -106,11 +106,13 @@ class SearchBar extends Component {
               Next Page
             </button>
           </div>
-          <div className="SearchBar-fav-button">
-            <button onClick={this.handleShowHideFavorites}>
-              {this.state.fav} Favorites
-            </button>
-          </div>
+          {!this.props.error && (
+            <div className="SearchBar-fav-button">
+              <button onClick={this.handleShowHideFavorites}>
+                {this.state.fav} Favorites
+              </button>
+            </div>
+          )}
         </div>
       );
     }

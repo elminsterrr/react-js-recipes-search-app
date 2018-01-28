@@ -6,10 +6,10 @@ import RecipeListItem from '../../containers/RecipeListItem';
 class RecipeList extends Component {
   render() {
     const recipesList = _.last(this.props.recipesReady).map(oneRecipe => {
-      const oneRecipeKey = _.uniqueId('recipe_');
+      const key = _.uniqueId('recipe_');
       return (
         <RecipeListItem
-          key={oneRecipeKey}
+          key={key}
           title={oneRecipe.recipe.label}
           link={oneRecipe.recipe.url}
           ingredients={oneRecipe.recipe.ingredients}
@@ -18,11 +18,9 @@ class RecipeList extends Component {
       );
     });
     return (
-      <div>
-        <div className="container">
-          <div className="row justify-content-xl-center">
-            <ul className="col-xl-12">{recipesList}</ul>
-          </div>
+      <div className="container">
+        <div className="row justify-content-xl-center">
+          <ul className="col-xl-12">{recipesList}</ul>
         </div>
       </div>
     );
