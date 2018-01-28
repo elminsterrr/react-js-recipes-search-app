@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
+import './style.css';
 
 import FavoritesListItem from '../../components/FavoritesListItem';
 
@@ -8,7 +9,9 @@ class Favorites extends Component {
   render() {
     if (this.props.favoritesList.length === 0) {
       return (
-        <div className="no-fav">There are no favorite recipes to show!</div>
+        <p className="FavoritesListItem-text">
+          There are no favorite recipes to show!
+        </p>
       );
     }
     const favoritesList = this.props.favoritesList.map(oneFav => {

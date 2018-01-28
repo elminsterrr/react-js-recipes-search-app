@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { addToFavorites } from '../../actions/';
+import './style.css';
 
 import Ingredients from '../../components/Ingredients';
 
@@ -24,26 +25,22 @@ class RecipeListItem extends Component {
     const { title, link, ingredients, thumbnail } = this.props;
     return (
       <li className="list-group-item">
-        <img
-          src={this.thumbnailCheck(thumbnail)}
-          className="thumbnail"
-          alt="thumbnail"
-        />
+        <img src={this.thumbnailCheck(thumbnail)} alt="thumbnail" />
         <a href={link} target="_blank">
-          <span className="title-recipe-list-item">{title}</span>
+          <span className="RecipeListItem-title">{title}</span>
         </a>
         <button
-          className="fav-button"
+          className="RecipeListItem-fav-button"
           onClick={() => this.handleFavorites([title, link])}
         >
           + Add to Fav
         </button>
         <br />
         <a href={link} target="_blank">
-          <span className="title-recipe-full">Full recipe link</span>
+          <span className="RecipeListItem-full-link">Full recipe link</span>
         </a>
         <br />
-        <span className="ingredients-title">Ingredients:</span>
+        <span className="RecipeListItem-ingredients-header">Ingredients:</span>
         <Ingredients ingredients={ingredients} />
         <br />
       </li>

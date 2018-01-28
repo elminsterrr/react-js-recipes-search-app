@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { selectIngredient } from '../../actions';
+import './style.css';
 
 class IngredientsListItem extends Component {
   handleIngredientSelect(oneIngredient) {
@@ -14,7 +15,7 @@ class IngredientsListItem extends Component {
     return (
       <li
         onClick={() => this.handleIngredientSelect(oneIngredient)}
-        className="one-ingredient"
+        className="IngredientsListItem-one-ingredient"
       >
         {oneIngredient}
       </li>

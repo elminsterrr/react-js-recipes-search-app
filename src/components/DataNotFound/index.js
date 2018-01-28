@@ -1,9 +1,10 @@
 import React from 'react';
+import './style.css';
 
 const DataNotFound = () => (
-  <div className="data-not-found">
+  <p className="DataNotFound-text">
     Sorry, nothing was found. Please try another search.
-  </div>
+  </p>
 );
 
 export default DataNotFound;

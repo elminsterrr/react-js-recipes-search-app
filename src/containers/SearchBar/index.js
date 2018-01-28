@@ -7,6 +7,7 @@ import {
   showClickedInfo,
   showHideFavorites,
 } from '../../actions/';
+import './style.css';
 
 import ButtonSearch from '../../components/ButtonSearch';
 
@@ -100,12 +101,12 @@ class SearchBar extends Component {
             <button className="btn btn-secondary" onClick={this.handlePrev}>
               Prev Page
             </button>
-            <span className="page-numbers">{this.state.page}</span>
+            <span className="SearchBar-page-numbers">{this.state.page}</span>
             <button className="btn btn-secondary" onClick={this.handleNext}>
               Next Page
             </button>
           </div>
-          <div className="fav-button-search-bar">
+          <div className="SearchBar-fav-button">
             <button onClick={this.handleShowHideFavorites}>
               {this.state.fav} Favorites
             </button>
@@ -119,7 +120,7 @@ class SearchBar extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit} className="input-group">
+        <form onSubmit={this.handleSubmit} className="SearchBar-input-group">
           <input
             className="form-control"
             placeholder={this.props.showClickedInfoFromStore}
@@ -130,7 +131,7 @@ class SearchBar extends Component {
             Search
           </ButtonSearch>
         </form>
-        <div className="pagination">{this.buttonsView()}</div>
+        <div className="SearchBar-pagination">{this.buttonsView()}</div>
       </div>
     );
   }
