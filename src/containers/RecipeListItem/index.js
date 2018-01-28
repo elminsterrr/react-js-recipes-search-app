@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { addToFavorites } from '../actions/';
+import { addToFavorites } from '../../actions/';
 
-import Ingredients from '../components/Ingredients';
+import Ingredients from '../../components/Ingredients';
 
 class RecipeListItem extends Component {
   thumbnailCheck(link) {

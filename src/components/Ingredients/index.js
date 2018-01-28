@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 
-import IngredientsListItem from '../containers/IngredientsListItem';
+import IngredientsListItem from '../../containers/IngredientsListItem';
 
 class Ingredients extends Component {
   render() {

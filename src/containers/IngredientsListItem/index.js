@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { selectIngredient } from '../actions';
+import { selectIngredient } from '../../actions';
 
 class IngredientsListItem extends Component {
   handleIngredientSelect(oneIngredient) {

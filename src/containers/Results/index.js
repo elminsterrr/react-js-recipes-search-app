@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 
-import Placeholder from '../components/Placeholder';
-import DataNotFound from '../components/DataNotFound';
-import ErrorInfo from '../components/ErrorInfo';
-import ButtonBackToTop from '../components/ButtonBackToTop';
-import RecipeList from '../components/RecipeList';
-import Favorites from './Favorites';
+import Placeholder from '../../components/Placeholder';
+import DataNotFound from '../../components/DataNotFound';
+import ErrorInfo from '../../components/ErrorInfo';
+import ButtonBackToTop from '../../components/ButtonBackToTop';
+import RecipeList from '../../components/RecipeList';
+import Favorites from '.././Favorites';
 
 class Results extends Component {
   showFavorites() {

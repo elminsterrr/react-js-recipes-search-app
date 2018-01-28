@@ -1,7 +1,8 @@
 import React from 'react';
+import './style.css';
 
-import SearchBar from '../containers/SearchBar';
-import Results from '../containers/Results';
+import SearchBar from '../../containers/SearchBar';
+import Results from '../../containers/Results';
 
 const App = () => (
   <div>

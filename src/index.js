@@ -6,10 +6,8 @@ import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import registerServiceWorker from './registerServiceWorker';
 
-import App from './components/App';
+import App from './components/App/';
 import reducers from './reducers';
-
-import './style.css';
 
 const createStoreWithMiddleware = createStore(
   reducers,

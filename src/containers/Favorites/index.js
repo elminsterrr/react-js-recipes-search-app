@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 
-import FavoritesListItem from '../components/FavoritesListItem';
+import FavoritesListItem from '../../components/FavoritesListItem';
 
 class Favorites extends Component {
   render() {

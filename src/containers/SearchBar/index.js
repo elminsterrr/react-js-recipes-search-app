@@ -6,9 +6,9 @@ import {
   fetchRecipesAndPage,
   showClickedInfo,
   showHideFavorites,
-} from '../actions/';
+} from '../../actions/';
 
-import ButtonSearch from '../components/ButtonSearch';
+import ButtonSearch from '../../components/ButtonSearch';
 
 class SearchBar extends Component {
   constructor(props) {

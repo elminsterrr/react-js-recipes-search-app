@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 
-import RecipeListItem from '../containers/RecipeListItem';
+import RecipeListItem from '../../containers/RecipeListItem';
 
 class RecipeList extends Component {
   render() {
