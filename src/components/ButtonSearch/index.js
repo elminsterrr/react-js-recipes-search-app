@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ButtonMain = () => (
+const ButtonSearch = () => (
   <div>
     <button type="submit" className="btn btn-secondary submit">
       Search
@@ -8,4 +8,4 @@ const ButtonMain = () => (
   </div>
 );
 
-export default ButtonMain;
+export default ButtonSearch;
