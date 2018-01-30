@@ -9,6 +9,7 @@ export const ADD_TO_FAVORITES = 'ADD_TO_FAVORITES';
 export const SHOW_HIDE_FAVORITES = 'SHOW_HIDE_FAVORITES';
 export const WAKE_HEROKU = 'WAKE_HEROKU';
 export const MANUAL_INGREDIENT_SELECTION = 'MANUAL_INGREDIENT_SELECTION';
+export const LOAD_FAVORITES = 'LOAD_FAVORITES';
 
 const myProxyServer = 'https://elminster-white-cors-anywhere.herokuapp.com/';
 
@@ -71,5 +72,12 @@ export function addToFavorites(fav) {
 export function showHideFavorites() {
   return {
     type: SHOW_HIDE_FAVORITES,
+  };
+}
+
+export function launchLoadingFavorites() {
+  return {
+    type: LOAD_FAVORITES,
+    payload: true,
   };
 }

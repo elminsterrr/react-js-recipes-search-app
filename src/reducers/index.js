@@ -8,6 +8,7 @@ import ManualIngredientSelectionReducer from './reducer_manual_ingredient_select
 import AddToFavoritesReducer from './reducer_add_to_favorites';
 import ShowFavoritesReducer from './reducer_show_favorites';
 import HerokuUpReducer from './reducer_wake_heroku';
+import LoadFavoritesReducer from './reducer_load_favorites';
 
 const rootReducer = combineReducers({
   recipes: FetchRecipesReducer,
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   favoritesList: AddToFavoritesReducer,
   showFavorites: ShowFavoritesReducer,
   isHerokuUp: HerokuUpReducer,
+  loadFavorites: LoadFavoritesReducer,
 });
 
 export default rootReducer;

@@ -86,37 +86,26 @@ class SearchBar extends Component {
   }
 
   buttonsView() {
-    // Show navigation buttons (prev, next):
-    // If there is an error coming from Recipe Puppy server
-    // OR
-    // If current search isn't null AND app found some data and successfully fetched that data
-    if (
-      this.props.error ||
-      (this.props.currentSearchFromStore !== null &&
-        this.props.checkIfSomeDataWasFound)
-    ) {
-      return (
-        <div>
-          <div className="buttons">
-            <button className="btn btn-secondary" onClick={this.handlePrev}>
-              Prev Page
-            </button>
-            <span className="SearchBar-page-numbers">{this.state.page}</span>
-            <button className="btn btn-secondary" onClick={this.handleNext}>
-              Next Page
+    return (
+      <div>
+        <div className="buttons">
+          <button className="btn btn-secondary" onClick={this.handlePrev}>
+            Prev Page
+          </button>
+          <span className="SearchBar-page-numbers">{this.state.page}</span>
+          <button className="btn btn-secondary" onClick={this.handleNext}>
+            Next Page
+          </button>
+        </div>
+        {!this.props.error && (
+          <div className="SearchBar-fav-button">
+            <button onClick={this.handleShowHideFavorites}>
+              {this.state.fav} Favorites
             </button>
           </div>
-          {!this.props.error && (
-            <div className="SearchBar-fav-button">
-              <button onClick={this.handleShowHideFavorites}>
-                {this.state.fav} Favorites
-              </button>
-            </div>
-          )}
-        </div>
-      );
-    }
-    return <div />;
+        )}
+      </div>
+    );
   }
 
   render() {

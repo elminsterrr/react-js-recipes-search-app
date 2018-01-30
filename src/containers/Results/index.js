@@ -7,16 +7,8 @@ import DataNotFound from '../../components/DataNotFound';
 import ErrorInfo from '../../components/ErrorInfo';
 import ButtonBackToTop from '../../components/ButtonBackToTop';
 import RecipeList from '../../components/RecipeList';
-import Favorites from '.././Favorites';
 
 class Results extends Component {
-  showFavorites() {
-    if (this.props.showFavorites) {
-      return <Favorites />;
-    }
-    return <div />;
-  }
-
   render() {
     if (this.props.error) {
       return <ErrorInfo />;
@@ -32,7 +24,6 @@ class Results extends Component {
 
     return (
       <div>
-        {this.showFavorites()}
         <RecipeList recipesReady={this.props.recipes} />
         <ButtonBackToTop />
       </div>

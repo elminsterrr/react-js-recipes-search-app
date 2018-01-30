@@ -1,0 +1,11 @@
+.FavButtons-align-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+button:disabled {
+  color: #fff;
+  background: #646464;
+}

@@ -1,0 +1,10 @@
+.FavoritesListItem-text {
+  color: #000;
+  text-align: center;
+  margin: 10px 0 10px 0;
+}
+
+.Placeholder-text {
+  display: flex;
+  margin: 0 auto;
+}
