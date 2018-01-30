@@ -10,6 +10,7 @@ export const SHOW_HIDE_FAVORITES = 'SHOW_HIDE_FAVORITES';
 export const WAKE_HEROKU = 'WAKE_HEROKU';
 export const MANUAL_INGREDIENT_SELECTION = 'MANUAL_INGREDIENT_SELECTION';
 export const LOAD_FAVORITES = 'LOAD_FAVORITES';
+export const LOAD_RECIPES = 'LOAD_RECIPES';
 
 const myProxyServer = 'https://elminster-white-cors-anywhere.herokuapp.com/';
 
@@ -47,6 +48,13 @@ export function fetchRecipesAndPage(ingredients, page) {
         dispatch({ type: FETCH_ERROR_TEST, payload: error });
         dispatch({ type: MANUAL_INGREDIENT_SELECTION, payload: false });
       });
+  };
+}
+
+export function loadRecipes(page) {
+  return {
+    type: LOAD_RECIPES,
+    payload: page,
   };
 }
 

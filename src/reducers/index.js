@@ -9,6 +9,7 @@ import AddToFavoritesReducer from './reducer_add_to_favorites';
 import ShowFavoritesReducer from './reducer_show_favorites';
 import HerokuUpReducer from './reducer_wake_heroku';
 import LoadFavoritesReducer from './reducer_load_favorites';
+import LoadRecipesReducer from './reducer_load_recipes';
 
 const rootReducer = combineReducers({
   recipes: FetchRecipesReducer,
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
   showFavorites: ShowFavoritesReducer,
   isHerokuUp: HerokuUpReducer,
   loadFavorites: LoadFavoritesReducer,
+  loadRecipes: LoadRecipesReducer,
 });
 
 export default rootReducer;

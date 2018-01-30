@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import {
   wakeUpHerokuServerFromSleep,
   fetchRecipesAndPage,
+  loadRecipes,
   showClickedInfo,
   showHideFavorites,
 } from '../../actions/';
@@ -67,13 +68,16 @@ class SearchBar extends Component {
       newPage = 1;
     }
     this.setState({ page: newPage });
-    this.props.fetchRecipesAndPage(this.props.currentSearchFromStore, newPage);
+    this.props.loadRecipes(newPage);
   }
 
   handleNext() {
-    const newPage = this.state.page + 1;
+    let newPage = this.state.page + 1;
+    if (newPage >= 10) {
+      newPage = 10;
+    }
     this.setState({ page: newPage });
-    this.props.fetchRecipesAndPage(this.props.currentSearchFromStore, newPage);
+    this.props.loadRecipes(newPage);
   }
 
   handleShowHideFavorites() {
@@ -141,7 +145,7 @@ class SearchBar extends Component {
           {this.buttonsView()}
         </div>
         <div className="SearchBar-pagination-favButtonsView">
-        {this.favButtonsView()}
+          {this.favButtonsView()}
         </div>
       </div>
     );
@@ -163,6 +167,7 @@ function mapDispatchToProps(dispatch) {
     {
       wakeUpHerokuServerFromSleep,
       fetchRecipesAndPage,
+      loadRecipes,
       showClickedInfo,
       showHideFavorites,
     },

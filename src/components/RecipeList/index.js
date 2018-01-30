@@ -5,7 +5,7 @@ import RecipeListItem from '../../containers/RecipeListItem';
 
 class RecipeList extends Component {
   render() {
-    const recipesList = _.last(this.props.recipesReady).map(oneRecipe => {
+    const recipesList = this.props.recipesReady.map(oneRecipe => {
       const key = _.uniqueId('recipe_');
       return (
         <RecipeListItem
