@@ -86,9 +86,17 @@ class SearchBar extends Component {
   }
 
   buttonsView() {
-    return (
-      <div>
-        <div className="buttons">
+    // Show navigation buttons (prev, next):
+    // If there is an error coming from Recipe Puppy server
+    // OR
+    // If current search isn't null AND app found some data and successfully fetched that data
+    if (
+      this.props.error ||
+      (this.props.currentSearchFromStore !== null &&
+        this.props.checkIfSomeDataWasFound)
+    ) {
+      return (
+        <div>
           <button className="btn btn-secondary" onClick={this.handlePrev}>
             Prev Page
           </button>
@@ -97,16 +105,20 @@ class SearchBar extends Component {
             Next Page
           </button>
         </div>
-        {!this.props.error && (
-          <div className="SearchBar-fav-button">
-            <button
-              className="btn btn-secondary"
-              onClick={this.handleShowHideFavorites}
-            >
-              {this.state.fav} Favorites
-            </button>
-          </div>
-        )}
+      );
+    }
+    return <div />;
+  }
+
+  favButtonsView() {
+    return (
+      <div className="SearchBar-fav-button">
+        <button
+          className="btn btn-secondary"
+          onClick={this.handleShowHideFavorites}
+        >
+          {this.state.fav} Favorites
+        </button>
       </div>
     );
   }
@@ -125,7 +137,12 @@ class SearchBar extends Component {
             Search
           </ButtonSearch>
         </form>
-        <div className="SearchBar-pagination">{this.buttonsView()}</div>
+        <div className="SearchBar-pagination-buttonsView">
+          {this.buttonsView()}
+        </div>
+        <div className="SearchBar-pagination-favButtonsView">
+        {this.favButtonsView()}
+        </div>
       </div>
     );
   }
