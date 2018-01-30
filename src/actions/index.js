@@ -16,8 +16,9 @@ const myProxyServer = 'https://elminster-white-cors-anywhere.herokuapp.com/';
 const YOUR_APP_ID = 'a7f201cb';
 const YOUR_APP_KEY = 'a1c054c16e7240f958694b6f821336aa';
 
-export function wakeUpHerokuServerFromSleep(ingredients, page) {
-  const url = `${myProxyServer}http://www.recipepuppy.com/api/?i=${ingredients}&p=${page}`;
+export function wakeUpHerokuServerFromSleep() {
+  const url = `${myProxyServer}http://www.google.com`;
+
   const request = axios.get(url);
   return dispatch => {
     request.then(() => {
@@ -27,12 +28,14 @@ export function wakeUpHerokuServerFromSleep(ingredients, page) {
 }
 
 export function fetchRecipesAndPage(ingredients, page) {
-  const url = `${myProxyServer}https://api.edamam.com/search?q=${ingredients}&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&from=${page}`;
+  const url = `${myProxyServer}https://api.edamam.com/search?q=${ingredients}
+  &app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&from=${page}&to=${page + 99}`;
 
   const request = axios.get(url);
   return dispatch => {
     request
       .then(({ data }) => {
+        console.log(data)
         dispatch({ type: FETCH_RECIPES, payload: data });
         dispatch({ type: CHECK_RECIPES_DATA, payload: data });
         dispatch({ type: CURRENT_SEARCH_TERM, payload: ingredients });

@@ -27,7 +27,7 @@ class SearchBar extends Component {
   }
 
   componentDidMount() {
-    this.props.wakeUpHerokuServerFromSleep('ham', 1);
+    this.props.wakeUpHerokuServerFromSleep();
   }
 
   componentDidUpdate(prevProps) {
