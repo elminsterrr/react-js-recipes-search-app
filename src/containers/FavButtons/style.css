@@ -1,11 +1,18 @@
-.FavButtons-align-center {
+.FavButtons-text-align-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.FavButtons-buttons-align-center {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 
-button:disabled {
-  color: #fff;
-  background: #646464;
+.FavButtons-buttons {
+  margin-bottom: 15px;
+  padding: 0px 5px;
 }

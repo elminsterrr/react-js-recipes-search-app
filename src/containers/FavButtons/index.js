@@ -38,21 +38,30 @@ class FavButtons extends Component {
   }
 
   handleLoadFavorites() {
-    if(localStorage.getItem('lastSavedFavourites')) {
+    if (localStorage.getItem('lastSavedFavourites')) {
       this.props.launchLoadingFavorites();
     }
   }
 
   render() {
     return (
-      <div className="FavButtons-align-center">
-        <button onClick={() => this.handleLoadFavorites()}>Load</button>
-        <button
-          onClick={() => this.handleSaveFavorites()}
-          disabled={!this.state.valueSave}
-        >
-          Save
-        </button>
+      <div className="FavButtons-text-align-center">
+        <h5>Your Favorite Recipes:</h5>
+        <div className="FavButtons-buttons-align-center">
+          <button
+            className="FavButtons-buttons btn btn-secondary"
+            onClick={() => this.handleLoadFavorites()}
+          >
+            Load
+          </button>
+          <button
+            className="FavButtons-buttons btn btn-secondary"
+            onClick={() => this.handleSaveFavorites()}
+            disabled={!this.state.valueSave}
+          >
+            Save
+          </button>
+        </div>
       </div>
     );
   }

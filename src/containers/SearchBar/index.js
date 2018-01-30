@@ -99,7 +99,10 @@ class SearchBar extends Component {
         </div>
         {!this.props.error && (
           <div className="SearchBar-fav-button">
-            <button onClick={this.handleShowHideFavorites}>
+            <button
+              className="btn btn-secondary"
+              onClick={this.handleShowHideFavorites}
+            >
               {this.state.fav} Favorites
             </button>
           </div>
