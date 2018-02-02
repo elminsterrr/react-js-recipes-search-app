@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import './style.css';
 
-import { launchLoadingFavorites } from '../../actions/';
+import { launchClearingFavorites } from '../../actions/';
 
 class FavButtons extends Component {
   constructor() {
@@ -27,19 +27,9 @@ class FavButtons extends Component {
   }
 
   handleClearFavorites() {
-    localStorage.clear();
-  }
-
-  handleConsoleLogLocalFavorites() {
-    console.log(
-      'with JSON.parse',
-      JSON.parse(localStorage.getItem('lastSavedFavourites'))
-    );
-  }
-
-  handleLoadFavorites() {
     if (localStorage.getItem('lastSavedFavourites')) {
-      this.props.launchLoadingFavorites();
+      this.props.launchClearingFavorites();
+      localStorage.clear();
     }
   }
 
@@ -50,12 +40,6 @@ class FavButtons extends Component {
         <div className="FavButtons-buttons-align-center">
           <button
             className="FavButtons-buttons btn btn-secondary"
-            onClick={() => this.handleLoadFavorites()}
-          >
-            Load
-          </button>
-          <button
-            className="FavButtons-buttons btn btn-secondary"
             onClick={() => this.handleSaveFavorites()}
             disabled={!this.state.valueSave}
           >
@@ -63,9 +47,9 @@ class FavButtons extends Component {
           </button>
           <button
             className="FavButtons-buttons btn btn-secondary"
-            onClick={() => this.handleConsoleLogLocalFavorites()}
+            onClick={() => this.handleClearFavorites()}
           >
-            --[DEV]--
+            Clear
           </button>
         </div>
       </div>
@@ -82,7 +66,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     {
-      launchLoadingFavorites,
+      launchClearingFavorites,
     },
     dispatch
   );

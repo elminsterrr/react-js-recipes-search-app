@@ -5,7 +5,7 @@ import ShowClickedInfoReducer from './reducer_show_clicked_info';
 import CurrentSearchTermReducer from './reducer_current_search_term';
 import FetchErrorReducer from './reducer_fetch_error';
 import ManualIngredientSelectionReducer from './reducer_manual_ingredient_selection';
-import AddToFavoritesReducer from './reducer_add_to_favorites';
+import ModifyFavoritesListReducer from './reducer_modify_favorites_list';
 import ShowFavoritesReducer from './reducer_show_favorites';
 import HerokuUpReducer from './reducer_wake_heroku';
 import LoadingFavoritesReducer from './reducer_loading_favorites';
@@ -18,7 +18,7 @@ const rootReducer = combineReducers({
   manualSelection: ManualIngredientSelectionReducer,
   checkRecipesData: CheckRecipesReducer,
   error: FetchErrorReducer,
-  favoritesList: AddToFavoritesReducer,
+  favoritesList: ModifyFavoritesListReducer,
   showFavorites: ShowFavoritesReducer,
   isHerokuUp: HerokuUpReducer,
   loadingFavorites: LoadingFavoritesReducer,

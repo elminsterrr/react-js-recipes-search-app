@@ -12,6 +12,7 @@ export const MANUAL_INGREDIENT_SELECTION = 'MANUAL_INGREDIENT_SELECTION';
 export const LOADING_FAVORITES = 'LOADING_FAVORITES';
 export const LOAD_RECIPES = 'LOAD_RECIPES';
 export const INJECT_TO_FAVORITES = 'INJECT_TO_FAVORITES';
+export const CLEAR_FAVORITES = 'CLEAR_FAVORITES';
 
 const myProxyServer = 'https://elminster-white-cors-anywhere.herokuapp.com/';
 const appID = 'a7f201cb';
@@ -83,14 +84,14 @@ export function showHideFavorites() {
   };
 }
 
-export function launchLoadingFavoritesStart() {
+export function loadingFavoritesStart() {
   return {
     type: LOADING_FAVORITES,
     payload: true,
   };
 }
 
-export function launchLoadingFavoritesEnd() {
+export function loadingFavoritesEnd() {
   return {
     type: LOADING_FAVORITES,
     payload: false,
@@ -99,8 +100,8 @@ export function launchLoadingFavoritesEnd() {
 
 export function launchLoadingFavorites() {
   return dispatch => {
-    dispatch(launchLoadingFavoritesStart());
-    dispatch(launchLoadingFavoritesEnd());
+    dispatch(loadingFavoritesStart());
+    dispatch(loadingFavoritesEnd());
   };
 }
 
@@ -108,5 +109,11 @@ export function addLocalStorageToFavoritesList(data) {
   return {
     type: INJECT_TO_FAVORITES,
     payload: data,
+  };
+}
+
+export function launchClearingFavorites() {
+  return {
+    type: CLEAR_FAVORITES,
   };
 }
