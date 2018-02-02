@@ -61,6 +61,12 @@ class FavButtons extends Component {
           >
             Save
           </button>
+          <button
+            className="FavButtons-buttons btn btn-secondary"
+            onClick={() => this.handleConsoleLogLocalFavorites()}
+          >
+            --[DEV]--
+          </button>
         </div>
       </div>
     );

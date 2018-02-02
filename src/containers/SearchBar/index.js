@@ -7,6 +7,7 @@ import {
   loadRecipes,
   showClickedInfo,
   showHideFavorites,
+  addLocalStorageToFavoritesList,
 } from '../../actions/';
 import './style.css';
 
@@ -29,6 +30,12 @@ class SearchBar extends Component {
 
   componentDidMount() {
     this.props.wakeUpHerokuServerFromSleep();
+    const localStorageData = JSON.parse(
+      localStorage.getItem('lastSavedFavourites')
+    );
+    if (localStorageData) {
+      this.props.addLocalStorageToFavoritesList(localStorageData);
+    }
   }
 
   componentDidUpdate(prevProps) {
@@ -170,6 +177,7 @@ function mapDispatchToProps(dispatch) {
       loadRecipes,
       showClickedInfo,
       showHideFavorites,
+      addLocalStorageToFavoritesList,
     },
     dispatch
   );

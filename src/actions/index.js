@@ -11,15 +11,14 @@ export const WAKE_HEROKU = 'WAKE_HEROKU';
 export const MANUAL_INGREDIENT_SELECTION = 'MANUAL_INGREDIENT_SELECTION';
 export const LOAD_FAVORITES = 'LOAD_FAVORITES';
 export const LOAD_RECIPES = 'LOAD_RECIPES';
+export const INJECT_TO_FAVORITES = 'INJECT_TO_FAVORITES';
 
 const myProxyServer = 'https://elminster-white-cors-anywhere.herokuapp.com/';
-
-const YOUR_APP_ID = 'a7f201cb';
-const YOUR_APP_KEY = 'a1c054c16e7240f958694b6f821336aa';
+const appID = 'a7f201cb';
+const appKey = 'a1c054c16e7240f958694b6f821336aa';
 
 export function wakeUpHerokuServerFromSleep() {
   const url = `${myProxyServer}http://www.google.com`;
-
   const request = axios.get(url);
   return dispatch => {
     request.then(() => {
@@ -30,13 +29,11 @@ export function wakeUpHerokuServerFromSleep() {
 
 export function fetchRecipesAndPage(ingredients, page) {
   const url = `${myProxyServer}https://api.edamam.com/search?q=${ingredients}
-  &app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&from=${page}&to=${page + 99}`;
-
+  &app_id=${appID}&app_key=${appKey}&from=${page}&to=${page + 99}`;
   const request = axios.get(url);
   return dispatch => {
     request
       .then(({ data }) => {
-        console.log(data)
         dispatch({ type: FETCH_RECIPES, payload: data });
         dispatch({ type: CHECK_RECIPES_DATA, payload: data });
         dispatch({ type: CURRENT_SEARCH_TERM, payload: ingredients });
@@ -90,5 +87,12 @@ export function launchLoadingFavorites() {
   return {
     type: LOAD_FAVORITES,
     payload: true,
+  };
+}
+
+export function addLocalStorageToFavoritesList(data) {
+  return {
+    type: INJECT_TO_FAVORITES,
+    payload: data,
   };
 }
