@@ -112,8 +112,9 @@ export function addLocalStorageToFavoritesList(data) {
   };
 }
 
-export function launchClearingFavorites() {
+export function launchClearingFavorites(emptyArr) {
   return {
     type: CLEAR_FAVORITES,
+    payload: emptyArr,
   };
 }

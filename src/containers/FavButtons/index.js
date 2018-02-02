@@ -28,7 +28,8 @@ class FavButtons extends Component {
 
   handleClearFavorites() {
     if (localStorage.getItem('lastSavedFavourites')) {
-      this.props.launchClearingFavorites();
+      const emptyArr = [];
+      this.props.launchClearingFavorites(emptyArr);
       localStorage.clear();
     }
   }
