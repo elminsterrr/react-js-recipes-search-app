@@ -1,6 +1,8 @@
 # react-js-recipes-search-app
 
 This is ingredient based recipe search app built with React and Redux.
+You can see it live here: [Heroku](https://react-js-recipe-search-app.herokuapp.com/)
+
 
 ## Features
 
