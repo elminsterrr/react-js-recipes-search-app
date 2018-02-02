@@ -46,10 +46,10 @@ class Favorites extends Component {
     return (
       <div>
         <div className="container">
-          <FavButtons />
           <div className="row justify-content-xl-center">
-            <ul className="col-xl-12">{favoritesListGenerator}</ul>
+            <ul className="Favorites-ul col-xl-12">{favoritesListGenerator}</ul>
           </div>
+          <FavButtons />
         </div>
       </div>
     );

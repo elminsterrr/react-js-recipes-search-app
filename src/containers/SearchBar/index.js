@@ -98,7 +98,7 @@ class SearchBar extends Component {
 
   buttonsView() {
     // Show navigation buttons (prev, next):
-    // If there is an error coming from Recipe Puppy server
+    // If there is an error coming from server
     // OR
     // If current search isn't null AND app found some data and successfully fetched that data
     if (

@@ -35,9 +35,14 @@ class FavButtons extends Component {
   }
 
   render() {
+    let nofavoritesGenerator = '';
+    if (this.props.favoritesList.length === 0) {
+      nofavoritesGenerator = 'Your favorites list is empty!';
+    }
+
     return (
       <div className="FavButtons-text-align-center">
-        <h5>Your Favorite Recipes:</h5>
+        <p className="FavButtons-text-p">{nofavoritesGenerator}</p>
         <div className="FavButtons-buttons-align-center">
           <button
             className="FavButtons-buttons btn btn-secondary"
