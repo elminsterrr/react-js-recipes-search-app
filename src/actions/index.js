@@ -9,7 +9,7 @@ export const ADD_TO_FAVORITES = 'ADD_TO_FAVORITES';
 export const SHOW_HIDE_FAVORITES = 'SHOW_HIDE_FAVORITES';
 export const WAKE_HEROKU = 'WAKE_HEROKU';
 export const MANUAL_INGREDIENT_SELECTION = 'MANUAL_INGREDIENT_SELECTION';
-export const LOAD_FAVORITES = 'LOAD_FAVORITES';
+export const LOADING_FAVORITES = 'LOADING_FAVORITES';
 export const LOAD_RECIPES = 'LOAD_RECIPES';
 export const INJECT_TO_FAVORITES = 'INJECT_TO_FAVORITES';
 
@@ -83,10 +83,24 @@ export function showHideFavorites() {
   };
 }
 
-export function launchLoadingFavorites() {
+export function launchLoadingFavoritesStart() {
   return {
-    type: LOAD_FAVORITES,
+    type: LOADING_FAVORITES,
     payload: true,
+  };
+}
+
+export function launchLoadingFavoritesEnd() {
+  return {
+    type: LOADING_FAVORITES,
+    payload: false,
+  };
+}
+
+export function launchLoadingFavorites() {
+  return dispatch => {
+    dispatch(launchLoadingFavoritesStart());
+    dispatch(launchLoadingFavoritesEnd());
   };
 }
 

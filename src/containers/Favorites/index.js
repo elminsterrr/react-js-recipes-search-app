@@ -13,7 +13,7 @@ class Favorites extends Component {
   render() {
     let favoritesListGenerator;
 
-    if (this.props.loadFavorites) {
+    if (this.props.loadingFavorites) {
       const loadedFavorites = JSON.parse(
         localStorage.getItem('lastSavedFavourites')
       );
@@ -30,7 +30,7 @@ class Favorites extends Component {
       });
     }
 
-    if (!this.props.loadFavorites) {
+    if (!this.props.loadingFavorites) {
       favoritesListGenerator = this.props.favoritesList.map(oneFav => {
         const keyFavList = _.uniqueId('favorite_');
         return (
@@ -59,7 +59,7 @@ class Favorites extends Component {
 function mapStateToProps(state) {
   return {
     favoritesList: state.favoritesList,
-    loadFavorites: state.loadFavorites,
+    loadingFavorites: state.loadingFavorites,
   };
 }
 

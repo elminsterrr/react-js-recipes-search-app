@@ -8,7 +8,7 @@ import ManualIngredientSelectionReducer from './reducer_manual_ingredient_select
 import AddToFavoritesReducer from './reducer_add_to_favorites';
 import ShowFavoritesReducer from './reducer_show_favorites';
 import HerokuUpReducer from './reducer_wake_heroku';
-import LoadFavoritesReducer from './reducer_load_favorites';
+import LoadingFavoritesReducer from './reducer_loading_favorites';
 import LoadRecipesReducer from './reducer_load_recipes';
 
 const rootReducer = combineReducers({
@@ -21,7 +21,7 @@ const rootReducer = combineReducers({
   favoritesList: AddToFavoritesReducer,
   showFavorites: ShowFavoritesReducer,
   isHerokuUp: HerokuUpReducer,
-  loadFavorites: LoadFavoritesReducer,
+  loadingFavorites: LoadingFavoritesReducer,
   loadRecipes: LoadRecipesReducer,
 });
 
