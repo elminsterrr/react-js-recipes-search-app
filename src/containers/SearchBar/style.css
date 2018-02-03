@@ -20,14 +20,7 @@
 }
 
 .SearchBar-pagination-buttonsView {
-  margin: 0px;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-}
-
-.SearchBar-pagination-favButtonsView {
-  margin: 0px 25px 25px 25px;
+  margin: 0px 0px 10px 0px;
   display: flex;
   justify-content: center;
   flex-direction: row;

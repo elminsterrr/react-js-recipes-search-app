@@ -4,7 +4,10 @@
   margin: 10px 0 10px 0;
 }
 
-.Placeholder-text {
-  display: flex;
+.Favorites-h4 {
   margin: 0 auto;
+  text-align: center;
+}
+.Favorites-ul {
+  margin-top: 16px;
 }

@@ -6,13 +6,12 @@ export const CHECK_RECIPES_DATA = 'CHECK_RECIPES_DATA';
 export const CURRENT_SEARCH_TERM = 'CURRENT_SEARCH_TERM';
 export const SHOW_CLICKED_INFO = 'SHOW_CLICKED_INFO';
 export const ADD_TO_FAVORITES = 'ADD_TO_FAVORITES';
-export const SHOW_HIDE_FAVORITES = 'SHOW_HIDE_FAVORITES';
 export const WAKE_HEROKU = 'WAKE_HEROKU';
 export const MANUAL_INGREDIENT_SELECTION = 'MANUAL_INGREDIENT_SELECTION';
-export const LOADING_FAVORITES = 'LOADING_FAVORITES';
 export const LOAD_RECIPES = 'LOAD_RECIPES';
 export const INJECT_TO_FAVORITES = 'INJECT_TO_FAVORITES';
 export const CLEAR_FAVORITES = 'CLEAR_FAVORITES';
+export const REVEAL_FAVORITES = 'REVEAL_FAVORITES';
 
 const myProxyServer = 'https://elminster-white-cors-anywhere.herokuapp.com/';
 const appID = 'a7f201cb';
@@ -72,43 +71,16 @@ export function showClickedInfo(info) {
 }
 
 export function addToFavorites(fav) {
-  return {
-    type: ADD_TO_FAVORITES,
-    payload: fav,
-  };
-}
-
-export function showHideFavorites() {
-  return {
-    type: SHOW_HIDE_FAVORITES,
-  };
-}
-
-export function loadingFavoritesStart() {
-  return {
-    type: LOADING_FAVORITES,
-    payload: true,
-  };
-}
-
-export function loadingFavoritesEnd() {
-  return {
-    type: LOADING_FAVORITES,
-    payload: false,
-  };
-}
-
-export function launchLoadingFavorites() {
   return dispatch => {
-    dispatch(loadingFavoritesStart());
-    dispatch(loadingFavoritesEnd());
+    dispatch({ type: ADD_TO_FAVORITES, payload: fav });
+    dispatch({ type: REVEAL_FAVORITES, payload: true });
   };
 }
 
 export function addLocalStorageToFavoritesList(data) {
-  return {
-    type: INJECT_TO_FAVORITES,
-    payload: data,
+  return dispatch => {
+    dispatch({ type: INJECT_TO_FAVORITES, payload: data });
+    dispatch({ type: REVEAL_FAVORITES, payload: true });
   };
 }
 

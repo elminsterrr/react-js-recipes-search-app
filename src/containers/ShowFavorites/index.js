@@ -7,7 +7,7 @@ import Favorites from '../Favorites';
 
 class ShowFavorites extends Component {
   handleShowFavorites() {
-    if (this.props.showFavorites) {
+    if (this.props.revealFavorites) {
       return <Favorites />;
     }
     return <div />;
@@ -20,7 +20,7 @@ class ShowFavorites extends Component {
 
 function mapStateToProps(state) {
   return {
-    showFavorites: state.showFavorites,
+    revealFavorites: state.revealFavorites,
   };
 }
 

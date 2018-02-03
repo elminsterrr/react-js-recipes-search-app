@@ -6,7 +6,6 @@ import {
   fetchRecipesAndPage,
   loadRecipes,
   showClickedInfo,
-  showHideFavorites,
   addLocalStorageToFavoritesList,
 } from '../../actions/';
 import './style.css';
@@ -121,19 +120,6 @@ class SearchBar extends Component {
     return <div />;
   }
 
-  favButtonsView() {
-    return (
-      <div className="SearchBar-fav-button">
-        <button
-          className="btn btn-secondary"
-          onClick={this.handleShowHideFavorites}
-        >
-          {this.state.fav} Favorites
-        </button>
-      </div>
-    );
-  }
-
   render() {
     return (
       <div>
@@ -150,9 +136,6 @@ class SearchBar extends Component {
         </form>
         <div className="SearchBar-pagination-buttonsView">
           {this.buttonsView()}
-        </div>
-        <div className="SearchBar-pagination-favButtonsView">
-          {this.favButtonsView()}
         </div>
       </div>
     );
@@ -176,7 +159,6 @@ function mapDispatchToProps(dispatch) {
       fetchRecipesAndPage,
       loadRecipes,
       showClickedInfo,
-      showHideFavorites,
       addLocalStorageToFavoritesList,
     },
     dispatch
