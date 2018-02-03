@@ -12,12 +12,9 @@
   justify-content: center;
 }
 
-.FavButtons-text-p {
-  margin-bottom: 20px;
-}
-
 .FavButtons-buttons {
-  margin-top:-20px;
+  margin-top:-18px;
   margin-bottom: 15px;
   padding: 0px 5px;
+  z-index: 1;
 }

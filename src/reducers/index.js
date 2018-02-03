@@ -6,22 +6,20 @@ import CurrentSearchTermReducer from './reducer_current_search_term';
 import FetchErrorReducer from './reducer_fetch_error';
 import ManualIngredientSelectionReducer from './reducer_manual_ingredient_selection';
 import ModifyFavoritesListReducer from './reducer_modify_favorites_list';
-import ShowFavoritesReducer from './reducer_show_favorites';
 import HerokuUpReducer from './reducer_wake_heroku';
-import LoadingFavoritesReducer from './reducer_loading_favorites';
 import LoadRecipesReducer from './reducer_load_recipes';
+import RevealFavoritesReducer from './reducer_reveal_favorites';
 
 const rootReducer = combineReducers({
+  isHerokuUp: HerokuUpReducer,
+  error: FetchErrorReducer,
   recipes: FetchRecipesReducer,
+  revealFavorites: RevealFavoritesReducer,
   showClickedInfo: ShowClickedInfoReducer,
   currentSearchTerm: CurrentSearchTermReducer,
   manualSelection: ManualIngredientSelectionReducer,
   checkRecipesData: CheckRecipesReducer,
-  error: FetchErrorReducer,
   favoritesList: ModifyFavoritesListReducer,
-  showFavorites: ShowFavoritesReducer,
-  isHerokuUp: HerokuUpReducer,
-  loadingFavorites: LoadingFavoritesReducer,
   loadRecipes: LoadRecipesReducer,
 });
 

@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import _ from 'lodash';
 import './style.css';
-
-import { launchLoadingFavorites } from '../../actions/';
 
 import FavoritesListItem from '../../components/FavoritesListItem';
 import FavButtons from '../FavButtons';
@@ -47,6 +44,8 @@ class Favorites extends Component {
       <div>
         <div className="container">
           <div className="row justify-content-xl-center">
+            <hr />
+            <h4 className="Favorites-h4">Favorites:</h4>
             <ul className="Favorites-ul col-xl-12">{favoritesListGenerator}</ul>
           </div>
           <FavButtons />
@@ -63,13 +62,4 @@ function mapStateToProps(state) {
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(
-    {
-      launchLoadingFavorites,
-    },
-    dispatch
-  );
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Favorites);
+export default connect(mapStateToProps, null)(Favorites);

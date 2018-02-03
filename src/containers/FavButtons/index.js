@@ -10,12 +10,23 @@ class FavButtons extends Component {
     super();
     this.state = {
       valueSave: false,
+      valueClear: false,
     };
   }
 
-  componentDidUpdate() {
-    if (this.props.favoritesList.length !== 0 && !this.state.valueSave) {
+  componentWillMount() {
+    if (this.props.revealFavorites) {
       this.setState({ valueSave: true });
+      this.setState({ valueClear: true });
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps !== this.props) {
+      if (this.props.favoritesList.length !== 0) {
+        this.setState({ valueSave: true });
+        this.setState({ valueClear: true });
+      }
     }
   }
 
@@ -27,22 +38,16 @@ class FavButtons extends Component {
   }
 
   handleClearFavorites() {
-    if (localStorage.getItem('lastSavedFavourites')) {
-      const emptyArr = [];
-      this.props.launchClearingFavorites(emptyArr);
-      localStorage.clear();
-    }
+    const emptyArr = [];
+    this.props.launchClearingFavorites(emptyArr);
+    localStorage.clear();
+    this.setState({ valueSave: false });
+    this.setState({ valueClear: false });
   }
 
   render() {
-    let nofavoritesGenerator = '';
-    if (this.props.favoritesList.length === 0) {
-      nofavoritesGenerator = 'Your favorites list is empty!';
-    }
-
     return (
       <div className="FavButtons-text-align-center">
-        <p className="FavButtons-text-p">{nofavoritesGenerator}</p>
         <div className="FavButtons-buttons-align-center">
           <button
             className="FavButtons-buttons btn btn-secondary"
@@ -54,6 +59,7 @@ class FavButtons extends Component {
           <button
             className="FavButtons-buttons btn btn-secondary"
             onClick={() => this.handleClearFavorites()}
+            disabled={!this.state.valueClear}
           >
             Clear
           </button>
@@ -65,6 +71,7 @@ class FavButtons extends Component {
 
 function mapStateToProps(state) {
   return {
+    revealFavorites: state.revealFavorites,
     favoritesList: state.favoritesList,
   };
 }
