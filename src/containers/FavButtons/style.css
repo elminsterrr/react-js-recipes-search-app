@@ -13,10 +13,11 @@
 }
 
 .FavButtons-text-p {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .FavButtons-buttons {
+  margin-top:-20px;
   margin-bottom: 15px;
   padding: 0px 5px;
 }
