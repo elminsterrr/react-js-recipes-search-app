@@ -7,12 +7,12 @@ You can see it live here: [Heroku](https://react-js-recipe-search-app.herokuapp.
 
 ## Features
 
-- Search Recipes based on ingredients
+- Search Recipes based on multiple ingredients (separated by commas)
 - Click on one ingredient from list to start a new search
 - Use '+ Add to Fav' button to add recipe to your favorites
 - Use 'Save' button to save your favorites list
 - Use 'Clear' button to make your favorites list empty
-- Every time you will launch app it will load your favorites from browser localStorage
+- Every time the app is launched it will automatically load your favorites from browser localStorage
 
 
 ## Getting Started
