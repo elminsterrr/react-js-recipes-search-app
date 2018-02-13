@@ -45,7 +45,7 @@ class Favorites extends Component {
         <div className="container">
           <div className="row justify-content-xl-center">
             <hr />
-            <h4 className="Favorites-h4">Favorites:</h4>
+            <h4 className="Favorites-h4">Your Favorites:</h4>
             <ul className="Favorites-ul col-xl-12">{favoritesListGenerator}</ul>
           </div>
           <FavButtons />
