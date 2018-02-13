@@ -18,13 +18,12 @@ class SearchBar extends Component {
     this.state = {
       term: '',
       page: 1,
-      fav: 'Show',
     };
+
     this.handlePrev = this.handlePrev.bind(this);
     this.handleNext = this.handleNext.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleShowHideFavorites = this.handleShowHideFavorites.bind(this);
   }
 
   componentDidMount() {
@@ -87,15 +86,6 @@ class SearchBar extends Component {
     }
     this.setState({ page: newPage });
     this.props.loadRecipes(newPage);
-  }
-
-  handleShowHideFavorites() {
-    this.props.showHideFavorites();
-    if (this.state.fav === 'Show') {
-      this.setState({ fav: 'Hide' });
-    } else {
-      this.setState({ fav: 'Show' });
-    }
   }
 
   buttonsView() {
