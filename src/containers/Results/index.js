@@ -25,6 +25,13 @@ class Results extends Component {
       return <ErrorInfo />;
     }
 
+    if (
+      this.props.recipes.length === 0 &&
+      this.props.favoritesList.length !== 0
+    ) {
+      return <div />;
+    }
+
     if (this.props.recipes.length === 0) {
       return <Placeholder />;
     }
@@ -48,6 +55,7 @@ function mapStateToProps(state) {
     error: state.error,
     showFavorites: state.showFavorites,
     loadRecipes: state.loadRecipes,
+    favoritesList: state.favoritesList,
   };
 }
 
