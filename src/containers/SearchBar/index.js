@@ -18,13 +18,12 @@ class SearchBar extends Component {
     this.state = {
       term: '',
       page: 1,
-      fav: 'Show',
     };
+
     this.handlePrev = this.handlePrev.bind(this);
     this.handleNext = this.handleNext.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleShowHideFavorites = this.handleShowHideFavorites.bind(this);
   }
 
   componentDidMount() {
@@ -43,6 +42,7 @@ class SearchBar extends Component {
       this.checker(this.props);
     }
   }
+
   // If some ingredient was manually selected
   // go to page 1 of that ingredient
   checker(properties) {
@@ -50,11 +50,13 @@ class SearchBar extends Component {
       this.setState({ page: 1 });
     }
   }
+
   // If input was changed go to page 1
   handleInputChange(event) {
     this.setState({ page: 1 });
     this.setState({ term: event.target.value });
   }
+
   // After submit, go to page 1 and fetch data
   handleSubmit(event) {
     this.setState({ page: 1 });
@@ -86,20 +88,11 @@ class SearchBar extends Component {
     this.props.loadRecipes(newPage);
   }
 
-  handleShowHideFavorites() {
-    this.props.showHideFavorites();
-    if (this.state.fav === 'Show') {
-      this.setState({ fav: 'Hide' });
-    } else {
-      this.setState({ fav: 'Show' });
-    }
-  }
-
   buttonsView() {
     // Show navigation buttons (prev, next):
     // If there is an error coming from server
     // OR
-    // If current search isn't null AND app found some data and successfully fetched that data
+    // If current search isn't null AND app has found some data and successfully fetched it
     if (
       this.props.error ||
       (this.props.currentSearchFromStore !== null &&
@@ -117,6 +110,7 @@ class SearchBar extends Component {
         </div>
       );
     }
+    // Esle return just <div />
     return <div />;
   }
 
