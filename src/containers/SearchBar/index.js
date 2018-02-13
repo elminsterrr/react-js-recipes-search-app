@@ -43,6 +43,7 @@ class SearchBar extends Component {
       this.checker(this.props);
     }
   }
+
   // If some ingredient was manually selected
   // go to page 1 of that ingredient
   checker(properties) {
@@ -50,11 +51,13 @@ class SearchBar extends Component {
       this.setState({ page: 1 });
     }
   }
+
   // If input was changed go to page 1
   handleInputChange(event) {
     this.setState({ page: 1 });
     this.setState({ term: event.target.value });
   }
+
   // After submit, go to page 1 and fetch data
   handleSubmit(event) {
     this.setState({ page: 1 });
@@ -99,7 +102,7 @@ class SearchBar extends Component {
     // Show navigation buttons (prev, next):
     // If there is an error coming from server
     // OR
-    // If current search isn't null AND app found some data and successfully fetched that data
+    // If current search isn't null AND app has found some data and successfully fetched it
     if (
       this.props.error ||
       (this.props.currentSearchFromStore !== null &&
@@ -117,6 +120,7 @@ class SearchBar extends Component {
         </div>
       );
     }
+    // Esle return just <div />
     return <div />;
   }
 
