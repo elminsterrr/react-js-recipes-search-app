@@ -100,17 +100,25 @@ class SearchBar extends Component {
     ) {
       return (
         <div>
-          <button className="btn btn-secondary" onClick={this.handlePrev}>
+          <button
+            className="btn btn-secondary"
+            onClick={this.handlePrev}
+            disabled={this.state.page === 1}
+          >
             Prev Page
           </button>
           <span className="SearchBar-page-numbers">{this.state.page}</span>
-          <button className="btn btn-secondary" onClick={this.handleNext}>
+          <button
+            className="btn btn-secondary"
+            onClick={this.handleNext}
+            disabled={this.state.page === 10}
+          >
             Next Page
           </button>
         </div>
       );
     }
-    // Esle return just <div />
+    // Else return just single <div />
     return <div />;
   }
 
