@@ -25,7 +25,11 @@ class RecipeListItem extends Component {
     const { title, link, ingredients, thumbnail } = this.props;
     return (
       <li className="list-group-item">
-        <img src={this.thumbnailCheck(thumbnail)} alt="thumbnail" />
+        <img
+          className="RecipeListItem-img"
+          src={this.thumbnailCheck(thumbnail)}
+          alt="thumbnail"
+        />
         <a href={link} target="_blank">
           <span className="RecipeListItem-title">{title}</span>
         </a>
