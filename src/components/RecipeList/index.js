@@ -1,22 +1,18 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
 
 import RecipeListItem from '../../containers/RecipeListItem';
 
 class RecipeList extends Component {
   render() {
-    const recipesList = this.props.recipesReady.map(oneRecipe => {
-      const key = _.uniqueId('recipe_');
-      return (
-        <RecipeListItem
-          key={key}
-          title={oneRecipe.recipe.label}
-          link={oneRecipe.recipe.url}
-          ingredients={oneRecipe.recipe.ingredients}
-          thumbnail={oneRecipe.recipe.image}
-        />
-      );
-    });
+    const recipesList = this.props.recipesReady.map(oneRecipe => (
+      <RecipeListItem
+        key={oneRecipe.recipe.url}
+        title={oneRecipe.recipe.label}
+        link={oneRecipe.recipe.url}
+        ingredients={oneRecipe.recipe.ingredients}
+        thumbnail={oneRecipe.recipe.image}
+      />
+    ));
     return (
       <div className="container">
         <div className="row justify-content-xl-center">
