@@ -7,6 +7,13 @@ import './style.css';
 import Ingredients from '../../components/Ingredients';
 
 class RecipeListItem extends Component {
+  constructor() {
+    super();
+    this.state = {
+      valueButton: false,
+    };
+  }
+
   thumbnailCheck(link) {
     if (link.length === 0) {
       // Thumbnail placeholder
@@ -18,6 +25,7 @@ class RecipeListItem extends Component {
   }
 
   handleFavorites(fav) {
+    this.setState({ valueButton: true });
     this.props.addToFavorites(fav);
   }
 
@@ -34,7 +42,8 @@ class RecipeListItem extends Component {
           <span className="RecipeListItem-title">{title}</span>
         </a>
         <button
-          className="RecipeListItem-fav-button"
+          disabled={this.state.valueButton}
+          className="RecipeListItem-fav-button btn btn-secondary"
           onClick={() => this.handleFavorites([title, link])}
         >
           + Add to Fav
@@ -45,7 +54,7 @@ class RecipeListItem extends Component {
         </a>
         <br />
         <span className="RecipeListItem-ingredients-header">Ingredients:</span>
-        <Ingredients ingredients={ingredients} />
+        <Ingredients key={link} ingredients={ingredients} />
         <br />
       </li>
     );
