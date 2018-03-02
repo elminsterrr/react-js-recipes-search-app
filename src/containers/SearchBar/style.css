@@ -25,3 +25,15 @@
   justify-content: center;
   flex-direction: row;
 }
+
+@media (max-width: 420px) {
+  .SearchBar-input-group {
+    width: 300px;
+  }
+}
+
+@media (max-width: 320px) {
+  .SearchBar-input-group {
+    width: 250px;
+  }
+}

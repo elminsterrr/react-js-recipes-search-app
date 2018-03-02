@@ -10,3 +10,24 @@
   display: flex;
   margin: 0 auto;
 }
+
+@media (max-width: 545px) {
+  .Placeholder-div {
+    width: 350px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .Placeholder-div {
+    width: 300px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 310px) {
+  .Placeholder-div {
+    width: 250px;
+    text-align: center;
+  }
+}

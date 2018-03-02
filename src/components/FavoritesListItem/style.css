@@ -4,6 +4,24 @@
 }
 
 .FavoritesListItem-li {
-  width: 30%;
+  width: 45%;
   margin: 0 auto;
+}
+
+@media (max-width: 1000px) {
+  .FavoritesListItem-li  {
+    width: 60%;
+  }
+}
+
+@media (max-width: 500px) {
+  .FavoritesListItem-li  {
+    width: 80%;
+  }
+}
+
+@media (max-width: 360px) {
+  .FavoritesListItem-li  {
+    width: 100%;
+  }
 }
