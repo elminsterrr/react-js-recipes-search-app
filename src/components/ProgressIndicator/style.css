@@ -1,0 +1,11 @@
+.ProgressIndicator-div {
+  width: 15%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  .ProgressIndicator-div {
+    width: 50%;
+  }
+}
