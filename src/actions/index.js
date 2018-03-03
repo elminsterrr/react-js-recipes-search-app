@@ -35,10 +35,12 @@ export function fetchRecipesAndPage(ingredients, page) {
     request
       .then(({ data }) => {
         dispatch({ type: FETCH_RECIPES, payload: data });
-        dispatch({ type: CHECK_RECIPES_DATA, payload: data });
-        dispatch({ type: CURRENT_SEARCH_TERM, payload: ingredients });
-        dispatch({ type: FETCH_ERROR_TEST, payload: null });
-        dispatch({ type: MANUAL_INGREDIENT_SELECTION, payload: false });
+        setTimeout(() => {
+          dispatch({ type: CHECK_RECIPES_DATA, payload: data });
+          dispatch({ type: CURRENT_SEARCH_TERM, payload: ingredients });
+          dispatch({ type: FETCH_ERROR_TEST, payload: null });
+          dispatch({ type: MANUAL_INGREDIENT_SELECTION, payload: false });
+        }, 3000);
       })
       .catch(error => {
         dispatch({ type: CURRENT_SEARCH_TERM, payload: ingredients });

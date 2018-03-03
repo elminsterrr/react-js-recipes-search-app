@@ -7,6 +7,7 @@ import DataNotFound from '../../components/DataNotFound';
 import ErrorInfo from '../../components/ErrorInfo';
 import ButtonBackToTop from '../../components/ButtonBackToTop';
 import RecipeList from '../../components/RecipeList';
+import ProgressIndicator from '../../components/ProgressIndicator';
 
 class Results extends Component {
   paginate(array, pageSize, pageNumber) {
@@ -40,6 +41,13 @@ class Results extends Component {
       return <DataNotFound />;
     }
 
+    if (
+      this.props.checkRecipesData === false &&
+      this.props.recipes.length !== 0
+    ) {
+      return <ProgressIndicator />;
+    }
+
     return (
       <div>
         <RecipeList recipesReady={this.getRecipesReady()} />
@@ -56,6 +64,7 @@ function mapStateToProps(state) {
     showFavorites: state.showFavorites,
     loadRecipes: state.loadRecipes,
     favoritesList: state.favoritesList,
+    checkRecipesData: state.checkRecipesData,
   };
 }
 

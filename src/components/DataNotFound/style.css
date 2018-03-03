@@ -4,3 +4,9 @@
   display: flex;
   justify-content: center;
 }
+
+@media (max-width: 420px) {
+  .DataNotFound-text {
+    width: 250px;
+  }
+}

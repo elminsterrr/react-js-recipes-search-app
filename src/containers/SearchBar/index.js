@@ -124,7 +124,7 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div>
+      <div className="SearchBar-input-group-parent">
         <form onSubmit={this.handleSubmit} className="SearchBar-input-group">
           <input
             className="form-control"
