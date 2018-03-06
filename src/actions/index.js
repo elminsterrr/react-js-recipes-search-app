@@ -23,7 +23,10 @@ export function wakeUpHerokuServerFromSleep() {
   const request = axios.get(url);
   return dispatch => {
     request.then(() => {
-      dispatch({ type: WAKE_HEROKU });
+      dispatch({
+        type: WAKE_HEROKU,
+        payload: true,
+      });
     });
   };
 }

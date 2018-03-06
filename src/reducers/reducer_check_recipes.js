@@ -7,7 +7,6 @@ export default function(state = false, action) {
         return false;
       }
       return true;
-
     default:
       return state;
   }
