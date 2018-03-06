@@ -1,8 +1,8 @@
-import { WAKE_HEROKU } from '../actions';
+import { SEARCH_STARTED } from '../actions';
 
 export default function(state = false, action) {
   switch (action.type) {
-    case WAKE_HEROKU:
+    case SEARCH_STARTED:
       return action.payload;
     default:
       return state;

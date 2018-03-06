@@ -7,7 +7,6 @@ export default function(state = [], action) {
         return [...state, null];
       }
       return [...state, action.payload.hits];
-
     default:
       return state;
   }

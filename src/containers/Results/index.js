@@ -43,7 +43,7 @@ class Results extends Component {
 
     if (
       this.props.checkRecipesData === false &&
-      this.props.recipes.length !== 0
+      this.props.isSearchStarted === true
     ) {
       return <ProgressIndicator />;
     }
@@ -59,6 +59,7 @@ class Results extends Component {
 
 function mapStateToProps(state) {
   return {
+    isSearchStarted: state.isSearchStarted,
     recipes: state.recipes,
     error: state.error,
     showFavorites: state.showFavorites,
