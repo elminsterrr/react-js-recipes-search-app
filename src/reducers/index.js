@@ -9,8 +9,10 @@ import ModifyFavoritesListReducer from './reducer_modify_favorites_list';
 import HerokuUpReducer from './reducer_wake_heroku';
 import LoadRecipesReducer from './reducer_load_recipes';
 import RevealFavoritesReducer from './reducer_reveal_favorites';
+import searchStartedReducer from './reducer_search_started';
 
 const rootReducer = combineReducers({
+  isSearchStarted: searchStartedReducer,
   isHerokuUp: HerokuUpReducer,
   error: FetchErrorReducer,
   recipes: FetchRecipesReducer,

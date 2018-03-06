@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+export const SEARCH_STARTED = 'SEARCH_STARTED';
 export const FETCH_RECIPES = 'FETCH_RECIPES';
 export const FETCH_ERROR_TEST = 'FETCH_ERROR_TEST';
 export const CHECK_RECIPES_DATA = 'CHECK_RECIPES_DATA';
@@ -24,6 +25,13 @@ export function wakeUpHerokuServerFromSleep() {
     request.then(() => {
       dispatch({ type: WAKE_HEROKU });
     });
+  };
+}
+
+export function searchStarted() {
+  return {
+    type: SEARCH_STARTED,
+    payload: true,
   };
 }
 

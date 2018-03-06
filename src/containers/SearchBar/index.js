@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {
   wakeUpHerokuServerFromSleep,
+  searchStarted,
   fetchRecipesAndPage,
   loadRecipes,
   showClickedInfo,
@@ -65,6 +66,7 @@ class SearchBar extends Component {
       this.props.showClickedInfo('');
     } else {
       event.preventDefault();
+      this.props.searchStarted();
       this.props.fetchRecipesAndPage(this.state.term, 1);
       this.props.showClickedInfo(this.state.term);
     }
@@ -158,6 +160,7 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     {
       wakeUpHerokuServerFromSleep,
+      searchStarted,
       fetchRecipesAndPage,
       loadRecipes,
       showClickedInfo,
