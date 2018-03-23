@@ -48,14 +48,10 @@ class RecipeListItem extends Component {
         >
           + Add to Fav
         </button>
-        <br />
-        <a href={link} target="_blank">
-          <span className="RecipeListItem-full-link">Full recipe link</span>
-        </a>
-        <br />
         <span className="RecipeListItem-ingredients-header">Ingredients:</span>
-        <Ingredients key={link} ingredients={ingredients} />
-        <br />
+        <div className="RecipeListItem-ingredients-container">
+          <Ingredients key={link} ingredients={ingredients} />
+        </div>
       </li>
     );
   }
