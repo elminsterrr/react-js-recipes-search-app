@@ -27,6 +27,13 @@ class Results extends Component {
     }
 
     if (
+      this.props.checkRecipesData === false &&
+      this.props.isSearchStarted === true
+    ) {
+      return <ProgressIndicator />;
+    }
+
+    if (
       this.props.recipes.length === 0 &&
       this.props.favoritesList.length !== 0
     ) {
@@ -39,13 +46,6 @@ class Results extends Component {
 
     if (_.last(this.props.recipes) === null) {
       return <DataNotFound />;
-    }
-
-    if (
-      this.props.checkRecipesData === false &&
-      this.props.isSearchStarted === true
-    ) {
-      return <ProgressIndicator />;
     }
 
     return (

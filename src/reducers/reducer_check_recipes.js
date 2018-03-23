@@ -1,4 +1,4 @@
-import { CHECK_RECIPES_DATA } from '../actions';
+import { CHECK_RECIPES_DATA, CHECK_RECIPES_FALSE } from '../actions';
 
 export default function(state = false, action) {
   switch (action.type) {
@@ -7,6 +7,8 @@ export default function(state = false, action) {
         return false;
       }
       return true;
+    case CHECK_RECIPES_FALSE:
+      return action.payload;
     default:
       return state;
   }

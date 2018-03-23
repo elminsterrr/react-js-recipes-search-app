@@ -10,6 +10,10 @@ class Favorites extends Component {
   render() {
     let favoritesListGenerator;
 
+    if (!this.props.favoritesList.length) {
+      return <div />;
+    }
+
     if (this.props.loadingFavorites) {
       const loadedFavorites = JSON.parse(
         localStorage.getItem('lastSavedFavourites')

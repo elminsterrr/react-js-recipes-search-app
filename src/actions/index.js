@@ -4,6 +4,7 @@ export const SEARCH_STARTED = 'SEARCH_STARTED';
 export const FETCH_RECIPES = 'FETCH_RECIPES';
 export const FETCH_ERROR_TEST = 'FETCH_ERROR_TEST';
 export const CHECK_RECIPES_DATA = 'CHECK_RECIPES_DATA';
+export const CHECK_RECIPES_FALSE = 'CHECK_RECIPES_FALSE';
 export const CURRENT_SEARCH_TERM = 'CURRENT_SEARCH_TERM';
 export const SHOW_CLICKED_INFO = 'SHOW_CLICKED_INFO';
 export const ADD_TO_FAVORITES = 'ADD_TO_FAVORITES';
@@ -101,5 +102,12 @@ export function launchClearingFavorites(emptyArr) {
   return {
     type: CLEAR_FAVORITES,
     payload: emptyArr,
+  };
+}
+
+export function checkRecipesDataSetToFalse() {
+  return {
+    type: CHECK_RECIPES_FALSE,
+    payload: false,
   };
 }
