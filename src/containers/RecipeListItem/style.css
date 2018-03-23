@@ -7,14 +7,10 @@
 .RecipeListItem-fav-button {
   color: #000;
   margin-top: 5px;
+  margin-bottom: 15px;
   justify-content: center;
   display: flex;
   padding: 7px;
-}
-
-.RecipeListItem-full-link {
-  font-weight: 300;
-  font-size: 16px;
 }
 
 .RecipeListItem-ingredients-header {
@@ -25,4 +21,8 @@
 .RecipeListItem-img {
   width: 10%;
   height: 10%;
+}
+
+.RecipeListItem-ingredients-container {
+  padding-bottom: 5px;
 }
