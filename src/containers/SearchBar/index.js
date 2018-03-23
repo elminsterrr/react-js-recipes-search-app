@@ -8,6 +8,7 @@ import {
   loadRecipes,
   showClickedInfo,
   addLocalStorageToFavoritesList,
+  checkRecipesDataSetToFalse,
 } from '../../actions/';
 import './style.css';
 
@@ -69,6 +70,7 @@ class SearchBar extends Component {
       this.props.searchStarted();
       this.props.fetchRecipesAndPage(this.state.term, 1);
       this.props.showClickedInfo(this.state.term);
+      this.props.checkRecipesDataSetToFalse();
     }
   }
 
@@ -165,6 +167,7 @@ function mapDispatchToProps(dispatch) {
       loadRecipes,
       showClickedInfo,
       addLocalStorageToFavoritesList,
+      checkRecipesDataSetToFalse,
     },
     dispatch
   );
