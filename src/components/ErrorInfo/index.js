@@ -4,8 +4,11 @@ import './style.css';
 const ErrorInfo = () => (
   <p className="ErrorInfo-api-error">
     Sorry, but Recipe Search API responded with an error. <br />
-    This is react demo app and allows 5 request per minute for simple testing
-    purpose only.
+    <br />
+    This is ReactJS demo app and allows 5 requests per minute for a simple
+    testing purpose only.<br />
+    <br />
+    Please try again by searching for a new recipe.
   </p>
 );
 
