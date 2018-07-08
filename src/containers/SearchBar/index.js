@@ -94,13 +94,13 @@ class SearchBar extends Component {
 
   buttonsView() {
     // Show navigation buttons (prev, next):
+    //
     // If there is no error coming from server
-    // OR
-    // If current search isn't null AND app has found some data and successfully fetched it
-    if (
-      !this.props.error ||
-      (this.props.currentSearchFromStore !== null &&
-        this.props.checkIfSomeDataWasFound)
+    // AND
+    // If current search isn't null
+    // AND
+    // If app has found some data and it successfully fetched that data
+    if (!this.props.error && this.props.currentSearchFromStore !== null && this.props.checkIfSomeDataWasFound
     ) {
       return (
         <div>
