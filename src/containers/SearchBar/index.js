@@ -100,7 +100,10 @@ class SearchBar extends Component {
     // If current search isn't null
     // AND
     // If app has found some data and it successfully fetched that data
-    if (!this.props.error && this.props.currentSearchFromStore !== null && this.props.checkIfSomeDataWasFound
+    if (
+      !this.props.error &&
+      this.props.currentSearchFromStore !== null &&
+      this.props.checkIfSomeDataWasFound
     ) {
       return (
         <div>
