@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { appID, appKey } from './secret'
+import { appID, appKey } from './secret';
 
 export const SEARCH_STARTED = 'SEARCH_STARTED';
 export const FETCH_RECIPES = 'FETCH_RECIPES';
