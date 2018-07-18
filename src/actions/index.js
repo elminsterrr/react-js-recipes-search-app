@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { appID, appKey } from './secret'
 
 export const SEARCH_STARTED = 'SEARCH_STARTED';
 export const FETCH_RECIPES = 'FETCH_RECIPES';
@@ -16,8 +17,6 @@ export const CLEAR_FAVORITES = 'CLEAR_FAVORITES';
 export const REVEAL_FAVORITES = 'REVEAL_FAVORITES';
 
 const myProxyServer = 'https://elminster-white-cors-anywhere.herokuapp.com/';
-const appID = 'a7f201cb';
-const appKey = 'a1c054c16e7240f958694b6f821336aa';
 
 export function wakeUpHerokuServerFromSleep() {
   const url = `${myProxyServer}http://www.google.com`;

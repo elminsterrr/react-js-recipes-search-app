@@ -39,7 +39,9 @@ npm install
 
 ### Usage
 
-Start the app by typing:
+You should generate your own API key and app id from https://www.edamam.com/ and add them to project (actions\index.js) before running the app.
+
+After adding your own keys start the app by typing:
 
 ```sh
 npm start
